@@ -6,9 +6,11 @@ Add several images from your gallery, make your own categories, search categorie
 
 ## Where your memes go
 
-Cony saves memes in **your browser on your device**. Your friends' collections are separate from yours. Clearing browser site data, using private browsing, or changing devices can remove or hide local memes. Google Drive backup is optional and manual: tap **☁ → Connect Google → Back up to Drive**. On another device, connect the **same Google account** and tap **Restore from Drive**. Each person backs up to a `Cony` folder in **their own** Drive account.
+Cony saves memes in **your browser on your device**. Your friends' collections are separate from yours. Clearing browser site data, using private browsing, or changing devices can remove or hide local memes. Google Drive backup is optional: tap **☁ → Connect Google**. While connected, uploads and changes sync automatically; **Back up to Drive** also starts a sync manually. After closing the page, reconnect to authorize a new session. On another device, connect the **same Google account** and tap **Restore from Drive**. Each person backs up to a `Cony` folder in **their own** Drive account.
 
-Deleting a meme in Cony deletes its local copy. It does not delete a prior Drive backup. The Google connection is for Drive authorization; Cony does not run an account system or automatically sync edits across devices.
+Deleting a meme removes its local copy immediately. Once connected, the next successful sync records the deletion in Drive and removes the backed-up image. Deleted images then stay deleted when another device restores or syncs. If you delete while offline, reconnect and sync on that same device before restoring elsewhere. Cony does not run an account system or continuously sync while the page is closed.
+
+Cony accepts PNG, JPEG, GIF, WebP, AVIF, HEIC, HEIF, and BMP images up to 25 MB each, with a limit of 2,000 images. The green check means the image was included in a successful Drive manifest write and its Drive file was present at that sync; it cannot guarantee the file will never be removed later outside Cony.
 
 ## Owner setup: enable Google Drive
 
@@ -47,4 +49,4 @@ Friends use the same Cony URL and OAuth client ID, but each chooses **their own 
 - `config.js` — public Google OAuth client ID configuration.
 - `README.md` — these instructions.
 
-Cony is a static GitHub Pages app. Original image files and a JSON manifest are written to Drive only after the user selects **Back up to Drive**. The app does not require a server or a client secret.
+Cony is a static GitHub Pages app. Original image files and a JSON manifest are written to Drive while connected, automatically after changes or when the user selects **Back up to Drive**. The app does not require a server or a client secret.
